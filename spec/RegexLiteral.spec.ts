@@ -14,8 +14,8 @@ describe('RegexLiteral', () => {
   });
 
   it('with special characters', () => {
-    const r = new RegexLiteral('gilly{b}');
-    expect(r.toRegexString()).to.equal('gilly\\{b\\}');
+    const r = new RegexLiteral('gilly{b} and a slash\\');
+    expect(r.toRegexString()).to.equal('gilly\\{b\\} and a slash\\\\');
   });
 
   it('single digit', () => {

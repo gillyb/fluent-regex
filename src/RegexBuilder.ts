@@ -1,4 +1,4 @@
-import { RegexComponent } from './RegexComponent';
+import RegexComponent from './RegexComponent';
 
 export default class RegexBuilder {
 
