@@ -9,13 +9,13 @@ const assert = chai.assert;
 describe('RegexLiteral', () => {
 
   it('specific word', () => {
-    const r = new RegexLiteral('gillyb');
+    const r = new RegexLiteral('gillyb', { wrap: false });
     expect(r.toRegexString()).to.equal('gillyb');
   });
 
   it('with special characters', () => {
     const r = new RegexLiteral('gilly{b} and a slash\\');
-    expect(r.toRegexString()).to.equal('gilly\\{b\\} and a slash\\\\');
+    expect(r.toRegexString()).to.equal('(gilly\\{b\\} and a slash\\\\)');
   });
 
   it('single digit', () => {
