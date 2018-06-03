@@ -4,14 +4,15 @@ export class RegexLiteral extends RegexComponent {
 
   private regexString: string;
 
-  private matchEscapeCharacters = /\.|\^|\$|\*|\+|\?|\(|\)|\[|\{|\}|\\|\|/g;
+  private regexEscapeCharacters = /\.|\^|\$|\*|\+|\?|\(|\)|\[|\{|\}|\\|\|/g;
 
   constructor(regexString: string, escapeSpecialCharacters: boolean = true) {
     super();
     if (escapeSpecialCharacters)
-      this.regexString = regexString.replace(this.matchEscapeCharacters, '\\$&');
+      this.regexString = regexString.replace(this.regexEscapeCharacters, '\\$&');
     else
       this.regexString = regexString;
+    return this;
   }
 
   static anyDigit() {

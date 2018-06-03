@@ -14,9 +14,10 @@ export default class Group extends RegexComponent {
     this.regex = regex;
     if (groupName) {
       if (!this.groupNameValidator.test(groupName))
-        throw Error(`Invalid group name \'${groupName}\'.\nA group name can contain letters and numbers but must start with a letter.`);
+        throw `Invalid group name \'${groupName}\'.\nA group name can contain letters and numbers but must start with a letter.`;
       this.name = groupName;
     }
+    return this;
   }
 
   static nonCapturing(regex: RegexComponent) {
@@ -26,9 +27,9 @@ export default class Group extends RegexComponent {
   }
 
   toRegexString = () => {
-    if (this.nonCapturing) return `(?:${this.regex})`;
-    if (this.name) return `(?<${this.name}>${this.regex})`;
-    return `(${this.regex})${this.regexQuantifier ? this.regexQuantifier : ''}`;
+    if (this.nonCapturing) return `(?:${this.regex.toRegexString()})${this.regexQuantifier ? this.regexQuantifier : ''}`;
+    if (this.name) return `(?<${this.name}>${this.regex.toRegexString()})${this.regexQuantifier ? this.regexQuantifier : ''}`;
+    return `(${this.regex.toRegexString()})${this.regexQuantifier ? this.regexQuantifier : ''}`;
   };
 
 }
