@@ -13,17 +13,17 @@ describe('RegexSequence', () => {
 
   it('simple sequence', () => {
     const r = new RegexSequence(
-      new RegexLiteral('gilly', { wrap: false }),
-      new RegexLiteral('b', { wrap: false }),
-      new RegexLiteral('@gmail', { wrap: false }),
-      new RegexLiteral('.com', { wrap: false })
+      new RegexLiteral('gilly'),
+      new RegexLiteral('b'),
+      new RegexLiteral('@gmail'),
+      new RegexLiteral('.com')
     );
     expect(r.toRegexString()).to.equal('(gillyb@gmail\\.com)');
   });
 
   it('simple sequence with quantifier', () => {
     const r = new RegexSequence(
-      new RegexLiteral('gillyb', { wrap: false }),
+      new RegexLiteral('gillyb'),
       RegexLiteral.anyDigit().optional()
     ).atLeastAmount(3);
     expect(r.toRegexString()).to.equal('(gillyb\\d?){3,}');

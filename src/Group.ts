@@ -1,4 +1,5 @@
 import RegexComponent from "./RegexComponent";
+import Or from "./Or";
 
 export default class Group extends RegexComponent {
 
@@ -24,6 +25,10 @@ export default class Group extends RegexComponent {
     const g = new Group(regex);
     g.nonCapturing = true;
     return g;
+  }
+
+  static or(...components: RegexComponent[]) {
+    return new Or(...components);
   }
 
   toRegexString = () => {
