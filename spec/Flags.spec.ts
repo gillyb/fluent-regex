@@ -1,7 +1,7 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
 
-import { RegexLiteral } from '../src/RegexLiteral';
+import RegexLiteral from '../src/RegexLiteral';
 import { RegexFlags } from '../src/RegexFlags';
 
 const expect = chai.expect;

@@ -2,9 +2,10 @@
   "name": "fluent-regex",
   "version": "1.0.0",
   "description": "A simple, type-safe, fluent api to construct regular expressions (and no dependencies!)",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register **/*.spec.ts"
+    "test": "./node_modules/mocha/bin/mocha -r ts-node/register **/*.spec.ts",
+    "build": "./node_modules/webpack/bin/webpack.js"
   },
   "author": "Gilly Barr",
   "license": "MIT",
@@ -12,9 +13,13 @@
     "@types/chai": "^4.1.3",
     "@types/mocha": "^5.2.0",
     "chai": "^4.1.2",
+    "clean-webpack-plugin": "^0.1.19",
     "mocha": "^5.2.0",
+    "ts-loader": "^4.4.1",
     "ts-node": "^6.0.5",
-    "typescript": "^2.8.3"
-  },
-  "dependencies": {}
+    "typescript": "^2.8.3",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3"
+  }
 }

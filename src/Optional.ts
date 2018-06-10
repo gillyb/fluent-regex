@@ -1,5 +1,5 @@
 import RegexComponent from "./RegexComponent";
-import { RegexLiteral } from "./RegexLiteral";
+import RegexLiteral from "./RegexLiteral";
 
 export default class Optional extends RegexComponent {
 

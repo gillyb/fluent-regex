@@ -1,7 +1,7 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
 
-import { RegexLiteral } from '../src/RegexLiteral';
+import RegexLiteral from '../src/RegexLiteral';
 import RegexSequence from '../src/RegexSequence';
 import Group from '../src/Group';
 import Or from '../src/Or';

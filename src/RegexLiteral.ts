@@ -7,7 +7,7 @@ const defaultConfig = {
   escapeSpecialCharacters: true
 };
 
-export class RegexLiteral extends RegexComponent {
+export default class RegexLiteral extends RegexComponent {
 
   private regexString: string;
   private options: RegexLiteralConfiguration = Object.assign({}, defaultConfig);
