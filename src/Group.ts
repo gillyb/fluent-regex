@@ -32,9 +32,10 @@ export default class Group extends RegexComponent {
   }
 
   toRegexString = () => {
-    if (this.nonCapturing) return `(?:${this.regex.toRegexString()})${this.regexQuantifier ? this.regexQuantifier : ''}`;
-    if (this.name) return `(?<${this.name}>${this.regex.toRegexString()})${this.regexQuantifier ? this.regexQuantifier : ''}`;
-    return `(${this.regex.toRegexString()})${this.regexQuantifier ? this.regexQuantifier : ''}`;
+    const quantifier = this.regexQuantifier ? this.regexQuantifier : '';
+    if (this.nonCapturing) return `(?:${this.regex.toRegexString()})${quantifier}`;
+    if (this.name) return `(?<${this.name}>${this.regex.toRegexString()})${quantifier}`;
+    return `(${this.regex.toRegexString()})${quantifier}`;
   };
 
 }
