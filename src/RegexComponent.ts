@@ -7,7 +7,7 @@ export default abstract class RegexComponent {
       throw `Only a single quantifier can be used.\nYou already defined a quantifier for this component (${this.regexQuantifier})`;
   }
 
-  // TODO: BUG: If the literal is longer than a single character, then we need to wrap it in parentheses before adding a quantifier
+  // TODO: add modifiers (/gi, etc)
 
   optional() {
     this.assertSingleQuantifier();
@@ -30,15 +30,18 @@ export default abstract class RegexComponent {
     this.regexQuantifier = '{' + amount + '}';
     return this;
   }
-  upToAmount(amount: number) {
-    this.assertSingleQuantifier();
-    this.regexQuantifier = `{,${amount}}`;
-    return this;
-  }
   atLeastAmount(amount: number) {
     this.assertSingleQuantifier();
     this.regexQuantifier = `{${amount},}`;
     return this;
+  }
+  rangeAmount(min: number, max: number) {
+    this.assertSingleQuantifier();
+    this.regexQuantifier = `{${min},${max}}`;
+    return this;
+  }
+  upToAmount(amount: number) {
+    return this.rangeAmount(1, amount);
   }
 
   abstract toRegexString: () => string;

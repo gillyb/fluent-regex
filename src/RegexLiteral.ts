@@ -1,11 +1,9 @@
 import RegexComponent from "./RegexComponent";
 
 export interface RegexLiteralConfiguration {
-  // wrap?: boolean;
   escapeSpecialCharacters?: boolean;
 }
 const defaultConfig = {
-  // wrap: true,
   escapeSpecialCharacters: true
 };
 

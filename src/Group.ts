@@ -27,7 +27,7 @@ export default class Group extends RegexComponent {
     return g;
   }
 
-  static or(...components: RegexComponent[]) {
+  static or(...components: (RegexComponent | string)[]) {
     return new Or(...components);
   }
 

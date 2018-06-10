@@ -16,7 +16,7 @@ describe('Optional', () => {
 
   it('multiple characters', () => {
     const r = new Optional(RegexLiteral.anyLetter().upToAmount(2));
-    expect(r.toRegexString()).to.equal('\[a-zA-Z]{,2}?');
+    expect(r.toRegexString()).to.equal('\[a-zA-Z]{1,2}?');
   });
 
 });

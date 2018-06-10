@@ -18,7 +18,7 @@ describe('RegexSequence', () => {
       new RegexLiteral('@gmail'),
       new RegexLiteral('.com')
     );
-    expect(r.toRegexString()).to.equal('(gillyb@gmail\\.com)');
+    expect(r.toRegexString()).to.equal('gillyb@gmail\\.com');
   });
 
   it('simple sequence with quantifier', () => {
@@ -39,7 +39,7 @@ describe('RegexSequence', () => {
       RegexLiteral.anyLetter().upToAmount(6),
       Group.nonCapturing(new RegexLiteral('gillyb').optional())
     );
-    expect(r.toRegexString()).to.equal('((?<group1>(\\d{3}|\\d{6}))[a-zA-Z]{,6}(?:(gillyb)?))');
+    expect(r.toRegexString()).to.equal('(?<group1>(\\d{3}|\\d{6}))[a-zA-Z]{1,6}(?:(gillyb)?)');
   });
 
 });

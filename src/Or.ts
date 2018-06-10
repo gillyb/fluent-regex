@@ -1,13 +1,18 @@
 import RegexComponent from "./RegexComponent";
+import { RegexLiteral } from "./RegexLiteral";
 
 export default class Or extends RegexComponent {
 
   private regexComponents: RegexComponent[];
   private groupName: string;
 
-  constructor(...components: RegexComponent[]) {
+  constructor(...components: (RegexComponent | string)[]) {
     super();
-    this.regexComponents = components;
+    this.regexComponents = components.map(r => {
+      if (typeof r === 'string')
+        return new RegexLiteral(r)
+      return r;
+    });
   }
 
   withGroupName = (name: string) => {

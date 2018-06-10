@@ -33,7 +33,7 @@ describe('RegexLiteral', () => {
   });
   it('single character with quantifier', () => {
     const r = RegexLiteral.anyLetter().upToAmount(2);
-    expect(r.toRegexString()).to.equal('[a-zA-Z]{,2}');
+    expect(r.toRegexString()).to.equal('[a-zA-Z]{1,2}');
   });
 
 });
