@@ -1,3 +1,5 @@
+import { RegexFlags } from "./RegexFlags";
+
 export default abstract class RegexComponent {
 
   protected regexQuantifier: string;
@@ -6,8 +8,6 @@ export default abstract class RegexComponent {
     if (this.regexQuantifier)
       throw `Only a single quantifier can be used.\nYou already defined a quantifier for this component (${this.regexQuantifier})`;
   }
-
-  // TODO: add modifiers (/gi, etc)
 
   optional() {
     this.assertSingleQuantifier();
@@ -46,7 +46,7 @@ export default abstract class RegexComponent {
 
   abstract toRegexString: () => string;
   
-  toRegex = () => {
-    return new RegExp(this.toRegexString());
+  toRegex = (...flags: RegexFlags[]) => {
+    return new RegExp(this.toRegexString(), flags.join(''));
   };
 }
