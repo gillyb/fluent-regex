@@ -18,7 +18,7 @@ export default class RegexSequence extends RegexComponent {
     const finalRegex = this.regexComponents.map(r => r.toRegexString()).join('');
     if (!this.regexQuantifier)
       return finalRegex;
-    return `(${finalRegex})${this.regexQuantifier ? this.regexQuantifier : ''}`;
+    return `(${finalRegex})${this.regexQuantifier}`;
   };
 
 }

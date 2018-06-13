@@ -11,12 +11,12 @@ describe('Optional', () => {
 
   it('digit', () => {
     const r = new Optional(RegexLiteral.anyDigit());
-    expect(r.toRegexString()).to.equal('\\d?');
+    expect(r.toRegexString()).to.equal('(\\d)?');
   });
 
   it('multiple characters', () => {
     const r = new Optional(RegexLiteral.anyLetter().upToAmount(2));
-    expect(r.toRegexString()).to.equal('\[a-zA-Z]{1,2}?');
+    expect(r.toRegexString()).to.equal('(\[a-zA-Z]{1,2})?');
   });
 
 });

@@ -5,6 +5,7 @@ This is a small, dependency-free library intended to help you construct regex st
 Using Typescript is preferred when using this library since it can help you complete the "fluent-regex" syntax easily.  
 
 Here are a few examples for you to see the syntax :  
+
 **American phone number:**
 ```
 // RegExp syntax
@@ -33,6 +34,11 @@ const r = new RegexSequence(
   RegexLiteral.anyLetter().atLeastAmount(2),
   new RegexSequence('.', RegexLiteral.anyLetter().atLeastAmount(2)).optional()
 );
+```
+
+**Some very simple, other use cases:**  
+```
+const r = new Rege
 ```
 
 # Installing  
