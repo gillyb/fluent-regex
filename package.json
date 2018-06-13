@@ -1,6 +1,6 @@
 {
   "name": "fluent-regex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple, type-safe, fluent api to construct regular expressions (and no dependencies!)",
   "homepage": "https://github.com/gillyb/fluent-regex",
   "main": "./src/index.js",
