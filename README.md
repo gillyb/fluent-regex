@@ -38,7 +38,13 @@ const r = new RegexSequence(
 
 **Some very simple, other use cases:**  
 ```
-const r = new Rege
+// Searching for my first name, and optional last name
+const regex = new RegExp('gilly( barr)?', 'i');
+const fluentRegex = R.sequence('gilly', R.optional(' barr')).toRegex(RegexFlags.IGNORE_CASE);
+
+// search for 3 digits in parentheses
+const regex = /\(?[0-9]{3}\)?/;
+const fluentRegex = R.sequence('(', RegexLiteral.anyDigit().exactAmount(3), ')');
 ```
 
 # Installing  
