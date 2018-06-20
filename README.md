@@ -57,6 +57,14 @@ npm install --save fluent-regex
 npm test
 ```
 
+# Missing Features (_[Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)_)  
+* Negate characters - '^' operator
+* Matching unicode characters - '\P'
+* Anchors - '^' & '$' (and more anchor types)
+* 'Look ahead' groups
+* 'Look behind' groups
+* Match as few times as possible - '??'
+
 # Contributing  
 All contributions are welcome. Feel free to create a pull request or open an issue.  
 If it's a pull request, please try to add some tests with it.  
