@@ -32,7 +32,7 @@ export class Regex {
     return new Or(...components);
   }
 
-  // More specific stuff (might be controversal)
+  // More specific stuff (might be controversial)
   static digit(): RegexLiteral {
     return RegexLiteral.anyDigit();
   }

@@ -28,11 +28,26 @@ export default class RegexLiteral extends RegexComponent {
   static anyDigit() {
     return new this('\\d', { escapeSpecialCharacters: false });
   }
+  static anyNonDigit() {
+    return new this('\\D', { escapeSpecialCharacters: false });
+  }
   static anyLetter() {
     return new this('[a-zA-Z]', { escapeSpecialCharacters: false });
   }
   static anyWhitespace() {
     return new this('\\s', { escapeSpecialCharacters: false });
+  }
+  static anyNonWhitespace() {
+    return new this('\\S', { escapeSpecialCharacters: false });
+  }
+  static anyWordCharacter() {
+    return new this('\\w', { escapeSpecialCharacters: false });
+  }
+  static anyNonWordCharacter() {
+    return new this('\\W', { escapeSpecialCharacters: false });
+  }
+  static anyCharacterExceptNewline() {
+    return new this('.', { escapeSpecialCharacters: false });
   }
 
   toRegexString = () => {
