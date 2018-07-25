@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gillyb/fluent-regex.svg?branch=master)](https://travis-ci.org/gillyb/fluent-regex)
+
 # fluent-regex
 
 This is a small, dependency-free library intended to help you construct regex statements in a fluent and typed way (instead of using cryptic symbols no one fully understands).  
