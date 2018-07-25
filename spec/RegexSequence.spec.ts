@@ -5,6 +5,7 @@ import RegexLiteral from '../src/RegexLiteral';
 import RegexSequence from '../src/RegexSequence';
 import Group from '../src/Group';
 import Or from '../src/Or';
+import { decodedTextSpanIntersectsWith } from 'typescript';
 
 const expect = chai.expect;
 const assert = chai.assert;
@@ -40,6 +41,17 @@ describe('RegexSequence', () => {
       Group.nonCapturing(new RegexLiteral('gillyb').optional())
     );
     expect(r.toRegexString()).to.equal('(?<group1>(\\d{3}|\\d{6}))[a-zA-Z]{1,6}(?:(gillyb)?)');
+  });
+
+  it('starts with', () => {
+    const r = new RegexSequence('gilly').startsWith();
+    expect(r.toRegexString()).to.equal('^gilly');
+  });
+  it('ends with', () => {
+    const r = new RegexSequence('gilly').startsWith().endsWith();
+    expect(r.toRegexString()).to.equal('^gilly$');
+    r.atLeastAmount(3);
+    expect(r.toRegexString()).to.equal('^(gilly){3,}$');
   });
 
 });
