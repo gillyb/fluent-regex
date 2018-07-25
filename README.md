@@ -58,7 +58,6 @@ npm test
 ```
 
 # Missing Features (_[Reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)_)  
-* Negate characters - '^' operator
 * Matching unicode characters - '\P'
 * Anchors - '^' & '$' (and more anchor types)
 * 'Look ahead' groups
